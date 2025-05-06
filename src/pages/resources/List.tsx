@@ -22,22 +22,6 @@ const List = () => {
   if (isLoading) return <Loader />;
 
   return (
-    // <Container>
-    //   <Title order={2}>SpaceX Launches</Title>
-    //   <Grid>
-    //     {data?.slice(0, 20).map((launch) => (
-    //       <Grid.Col span={4} key={launch.id}>
-    //         <Link to={`/resources/${launch.id}`} style={{ textDecoration: 'none' }}>
-    //           <Card shadow="sm" padding="md" radius="md" withBorder>
-    //             <Title order={4}>{launch.name}</Title>
-    //             <p>{new Date(launch.date_utc).toLocaleDateString()}</p>
-    //           </Card>
-    //         </Link>
-    //       </Grid.Col>
-    //     ))}
-    //   </Grid>
-    // </Container>
-
     <Container size="lg" py="xl">
       <Title order={2} align="center" mb="xl">
         🚀 SpaceX Launches

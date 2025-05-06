@@ -29,7 +29,7 @@ const Login = () => {
       <Paper
         shadow="sm"
         style={{
-          minWidth: "500px",
+          width: 'min(450px, max(350px, 50vw))',
           borderRadius: theme.radius.md,
           backgroundColor: theme.colors.secondary[1],
           padding: theme.spacing.lg,
@@ -51,6 +51,11 @@ const Login = () => {
             label: {
               color: theme.colors.primary[7],
               fontWeight: 500,
+            },
+            input: {
+              backgroundColor: '#f9f9f9',
+              color: '#333',
+              borderColor: '#ddd',
             }
           }
           }
@@ -69,6 +74,11 @@ const Login = () => {
             label: {
               color: theme.colors.primary[7],
               fontWeight: 500,
+            },
+            input: {
+              backgroundColor: '#f9f9f9',
+              color: '#333',
+              borderColor: '#ddd',
             }
           }
           }
@@ -79,7 +89,7 @@ const Login = () => {
             onClick={handleLogin}
             style={{
               width: '100%',
-              backgroundColor: theme.colors.primary[6], // Using primary color
+              backgroundColor: theme.colors.primary[6],
               color: '#fff',
               borderRadius: theme.radius.md,
               fontWeight: 600,

@@ -43,20 +43,6 @@ const Detail = () => {
     if (loadingLaunch || loadingRocket) return <Loader />;
 
     return (
-        // <Container>
-        //     <Title order={2}>{launch?.name}</Title>
-        //     <Text>Date: {launch?.date_utc ? new Date(launch.date_utc).toLocaleDateString() : 'N/A'}</Text>
-        //     <Text mt="sm">{launch?.details || 'No description available.'}</Text>
-
-        //     {rocket && (
-        //         <Card shadow="md" padding="lg" mt="lg">
-        //             <Title order={4}>Rocket Info</Title>
-        //             <Text>Name: {rocket.name}</Text>
-        //             <Text>Type: {rocket.type}</Text>
-        //             <Text mt="sm">{rocket.description}</Text>
-        //         </Card>
-        //     )}
-        // </Container>
         <Container size="md" py="xl">
             <Title order={2} mb="xs">
                 🚀 {launch?.name || 'Launch Info'}
