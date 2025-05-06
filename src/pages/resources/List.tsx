@@ -23,13 +23,13 @@ const List = () => {
 
   return (
     <Container size="lg" py="xl">
-      <Title order={2} align="center" mb="xl">
+      <Title order={4} mb="sm" align="center">
         🚀 SpaceX Launches
       </Title>
 
       <Grid gutter="lg">
         {data?.slice(0, 20).map((launch) => (
-          <Grid.Col span={4} key={launch.id}>
+          <Grid.Col xs={12} sm={6} md={4} key={launch.id}>
             <Link
               to={`/resources/${launch.id}`}
               style={{ textDecoration: 'none' }}

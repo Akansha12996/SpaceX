@@ -11,11 +11,14 @@ const Landing = () => {
 				display: 'flex',
 				flexDirection: 'column',
 				justifyContent: 'center',
-				alignItems: 'center'
+				alignItems: 'center',
+				width: "100vw",
+				textAlign: "center"
+
 			}}
 		>
 			<Image
-				width={500}
+				// width={500}
 				radius="md"
 				src="https://ebsedu.org/wp-content/uploads/elementor/thumbs/Elon-Musk-SpaceX-qrhfmhgqe2huzg4k3z2y0rmsiisq9mtdi80p1t479g.jpg"
 				style={{ maxWidth: '100%' }}
@@ -30,7 +33,7 @@ const Landing = () => {
 				Login
 			</Button>
 
-		</Container>
+		</Container >
 	);
 };
 
