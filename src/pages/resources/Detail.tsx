@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { useParams } from 'react-router-dom';
-import { Container, Title, Text, Loader, Card } from '@mantine/core';
+import { Container, Title, Text, Loader, Card, Divider, Space } from '@mantine/core';
 
 interface Launch {
     name: string;
@@ -43,18 +43,49 @@ const Detail = () => {
     if (loadingLaunch || loadingRocket) return <Loader />;
 
     return (
-        <Container>
-            <Title order={2}>{launch?.name}</Title>
-            <Text>Date: {launch?.date_utc ? new Date(launch.date_utc).toLocaleDateString() : 'N/A'}</Text>
-            <Text mt="sm">{launch?.details || 'No description available.'}</Text>
+        // <Container>
+        //     <Title order={2}>{launch?.name}</Title>
+        //     <Text>Date: {launch?.date_utc ? new Date(launch.date_utc).toLocaleDateString() : 'N/A'}</Text>
+        //     <Text mt="sm">{launch?.details || 'No description available.'}</Text>
+
+        //     {rocket && (
+        //         <Card shadow="md" padding="lg" mt="lg">
+        //             <Title order={4}>Rocket Info</Title>
+        //             <Text>Name: {rocket.name}</Text>
+        //             <Text>Type: {rocket.type}</Text>
+        //             <Text mt="sm">{rocket.description}</Text>
+        //         </Card>
+        //     )}
+        // </Container>
+        <Container size="md" py="xl">
+            <Title order={2} mb="xs">
+                🚀 {launch?.name || 'Launch Info'}
+            </Title>
+            <Text size="sm" color="dimmed">
+                Date: {launch?.date_utc ? new Date(launch.date_utc).toLocaleDateString(undefined, {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                }) : 'N/A'}
+            </Text>
+
+            <Space h="md" />
+
+            <Text>
+                {launch?.details || 'No description available.'}
+            </Text>
 
             {rocket && (
-                <Card shadow="md" padding="lg" mt="lg">
-                    <Title order={4}>Rocket Info</Title>
-                    <Text>Name: {rocket.name}</Text>
-                    <Text>Type: {rocket.type}</Text>
-                    <Text mt="sm">{rocket.description}</Text>
-                </Card>
+                <>
+                    <Divider my="xl" label="Rocket Info" labelPosition="center" />
+
+                    <Card shadow="md" padding="xl" radius="md" withBorder>
+                        <Title order={4} mb="sm">🚀 {rocket.name}</Title>
+                        <Text size="sm" color="dimmed">Type: {rocket.type}</Text>
+                        <Space h="sm" />
+                        <Text>{rocket.description}</Text>
+                    </Card>
+                </>
             )}
         </Container>
     );

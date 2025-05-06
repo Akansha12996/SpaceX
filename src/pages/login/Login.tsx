@@ -18,12 +18,20 @@ const Login = () => {
 
   return (
 
-    <Container size="xs" style={{ padding: theme.spacing.md }}>
+    <Container size="xs" style={{
+      height: '100vh',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+
+    }}>
       <Paper
         shadow="sm"
         style={{
+          minWidth: "500px",
           borderRadius: theme.radius.md,
-          backgroundColor: theme.colors.primary[0],
+          backgroundColor: theme.colors.secondary[1],
           padding: theme.spacing.lg,
         }}
       >
